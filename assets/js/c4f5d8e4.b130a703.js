@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkgraphdb_aws_deployment_guide=self.webpackChunkgraphdb_aws_deployment_guide||[]).push([[4195],{2841:(e,t,a)=>{a.r(t),a.d(t,{default:()=>n});var u=a(7294),d=a(6550);function n(){return u.createElement(d.l_,{to:"docs/about"})}}}]);
