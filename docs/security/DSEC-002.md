@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# (DSEC-002) Root privileges guidance
+# Root privileges guidance
 
 To maintain the security of your AWS resources, it is recommended to follow these IAM best practices:
 * **Avoid using the AWS Root User Access Key**: It is advisable not to utilize the AWS Root User Access Key for regular operations to minimize the risk of unauthorized access.

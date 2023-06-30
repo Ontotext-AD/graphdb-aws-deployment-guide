@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# (HLCH-001) Monitoring and health checks
+# Monitoring and health checks
 
 **GraphDB documentation:**
 
