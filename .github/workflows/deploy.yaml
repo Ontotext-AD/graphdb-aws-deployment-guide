@@ -1,9 +1,6 @@
 name: Deploy to GitHub Pages
 
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
@@ -13,6 +10,7 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
