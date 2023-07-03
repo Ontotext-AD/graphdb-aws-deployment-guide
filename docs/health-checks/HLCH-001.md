@@ -39,11 +39,11 @@ curl http://graphdb1.example.com:7200/rest/cluster/node/status
 
 3. **Checking Repository Health:**
 
-GraphDB provides a health check endpoint for monitoring repository health. You can access this endpoint at `http://localhost:7200/repositories/&lt;repo_name>/health`.
+GraphDB provides a health check endpoint for monitoring repository health. You can access this endpoint at `http://graphdb1.example.com:7200/repositories/<repo_name>/health`.
 
 For example:
 ```shell
-curl http://localhost:7200/repositories/myrepo/health?
+curl http://graphdb1.example.com:7200/repositories/myrepo/health?
 ```
 
 The response code will indicate the health status of the repository.
