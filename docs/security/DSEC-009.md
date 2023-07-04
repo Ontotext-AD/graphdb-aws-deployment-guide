@@ -2,5 +2,5 @@
 sidebar_position: 8
 ---
 
-# (DSEC-009) Data encryption configurations
+# Data encryption configurations
 **TODO:**

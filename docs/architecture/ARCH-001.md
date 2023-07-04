@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# (ARCH-001) Architecture Diagram
+# Architecture Diagram
 
 The GraphDB architecture diagram showcases the deployment architecture for GraphDB on EC2 instances in AWS cloud platform.
 

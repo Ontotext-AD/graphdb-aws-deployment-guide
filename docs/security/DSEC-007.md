@@ -2,5 +2,7 @@
 sidebar_position: 6
 ---
 
-# (DSEC-007) Stored secrets
-**TODO:** We decided not to use secrets right ?
+# Stored secrets
+
+GraphDB does not require the usage of AWS Secrets Manager. 
+We have alternative methods for managing sensitive information and credentials securely.
