@@ -6,7 +6,8 @@ sidebar_position: 1
 
 The GraphDB architecture diagram showcases the deployment architecture for GraphDB on EC2 instances in AWS cloud platform.
 
-The diagram illustrates the key components, and their interactions to provide a high-level understanding of the system's architecture.
+The diagram illustrates the key components, and their interactions to provide a high-level understanding 
+of the system's architecture and how it should be deployed.
 
 ![ftr-architecture.png](img/ftr-architecture.png)
 
