@@ -72,3 +72,22 @@ You can also perform passive health checks that compare the repository state to 
 * **Immediate Passive:** Append `?passive` to the health endpoint URL. If the repository state is RUNNING, an active check will be performed. Otherwise, a simple check listing the repository state will be returned.\
 * **Delayed Passive (if needed):** Append `?passive=N` to the endpoint URL, where N is the timeout in seconds. The system will attempt to get the repository for up to N seconds. If successful, an active check will be performed. If the timeout occurs, a simple check listing the repository state will be returned
 
+### Prometheus Integration with Cloudwatch
+
+#### Prerequisites
+The monitoring setup must start with the creation of a custom IAM role, 
+which must include the AWS managed policy called “CloudWatchAgentServerPolicy”, 
+this role must be assigned to all monitored instances:
+
+1. Go to IAM section
+2. Under Roles
+   * Click on “Create role”.
+   * Choose EC2 Service
+   * Search for “CloudWatchAgentServerPolicy” and select it
+   * Name your role
+3. Assign the created role for your instances
+   * Go to the EC2 section
+   * Select the desired instances
+   * Under the “Security” option choose “modify IAM role”
+   * Choose your custom role
+
