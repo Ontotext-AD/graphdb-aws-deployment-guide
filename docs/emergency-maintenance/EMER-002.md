@@ -27,7 +27,7 @@ The following procedure describes how to recover one or multiple failed nodes:
    This will avoid building and sending a snapshot multiple times.
    Please note that this will trigger full replication, and it could be time-consuming depending on the size of the repository.   
 
-## Rebuilding the cluster from a single node
+## Rebuilding the Cluster from a Single Node
 Sometimes, multiple nodes can fail or in other situations:
 * nodes might be available,but cannot agree on the state of the cluster, 
 * cannot agree, which the leader is, and the cluster will be in a deadlocked state, unable to process write or even read requests.
@@ -44,8 +44,24 @@ Use the following procedure to rebuild the cluster from a single node:
    * Determine the size (in bytes) of `log.index` file. 
    The location of this file is relative to the configured GraphDB data directory and has the following path `raft/transaction-log/log.index`.
    * Use the following formula to calculate the log index (size_in_bytes / 33) - 1.
-4. On all nodes, except for the one determined in step 2, delete the entire data directory of GraphDB.
-5. On the node chosen in step 2, delete only the `raft/` subfolder of the data directory.
+4. On all nodes, except for the one determined in step 3, delete the entire data directory of GraphDB.
+5. On the node chosen in step 3, delete only the `raft/` subfolder of the data directory.
 6. Start the GraphDB processes again.
-7. Create the cluster again, but **make sure to issue the request to the node that was chosen in step 2**
+7. Create the cluster again, but **make sure to issue the request to the node that was chosen in step 3**
+
+For example, let's assume we have three nodes: `graphdb1.example.com`, `graphdb2.example.com` and `graphdb3.example.com`.
+If you have determined that node `graphdb2.example.com` is the node with the highest number of processed transactions, 
+the request should be: 
+
+```shell
+curl -X POST -H 'Content-type: application/json' \
+    http://graphdb2.example.com:7200/rest/cluster/config \
+    -d '{
+        "nodes": [
+            "graphdb1.example.com:7300",
+            "graphdb2.example.com:7300",
+            "graphdb3.example.com:7300"
+        ]
+    }'
+```
    
