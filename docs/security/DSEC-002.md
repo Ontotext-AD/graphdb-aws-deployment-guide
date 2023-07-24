@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Root privileges guidance
+# Root Privileges Guidance
 
 To maintain the security of your AWS resources, it is recommended to follow these IAM best practices:
 * **Avoid using the AWS Root User Access Key**: 

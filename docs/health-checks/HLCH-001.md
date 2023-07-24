@@ -2,12 +2,12 @@
 sidebar_position: 1
 ---
 
-# Monitoring and health checks
+# Monitoring and Health Checks
 
 **GraphDB documentation:**
 
-* [Database health checks](https://graphdb.ontotext.com/documentation/10.2/database-health-checks.html)
-* [Creating a cluster](https://graphdb.ontotext.com/documentation/10.2/creating-a-cluster.html#monitor-cluster-status)
+* [Database health checks](https://graphdb.ontotext.com/documentation/10.3/database-health-checks.html)
+* [Creating a cluster](https://graphdb.ontotext.com/documentation/10.3/creating-a-cluster.html#monitor-cluster-status)
 
 ## Monitoring a GraphDB Cluster
 
