@@ -3,6 +3,7 @@ sidebar_position: 8
 ---
 
 # Data Encryption Configurations
+GraphDB does not require AWS Data Encryption to operate properly, however we advise you to encrypt your EBS and S3 volumes.
 
 ## EBS Volumes
 EBS volumes can be encrypted using the default AWS managed KMS key, or you can choose to encrypt the volume using a 

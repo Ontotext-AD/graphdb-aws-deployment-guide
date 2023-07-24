@@ -54,7 +54,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-
+      colorMode:{
+        defaultMode: 'light',
+        disableSwitch: false,
+      },
       navbar: {
         title: 'GraphDB AWS Deployment Guide',
         style:'dark',

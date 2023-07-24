@@ -4,8 +4,9 @@ sidebar_position: 2
 
 # Recovering the Cluster
 
-The GraphDB cluster relies on quorum-based replication, meaning that the cluster should have over 50% alive nodes 
-to be able to execute INSERT/DELETE operations. 
+The GraphDB cluster relies on quorum-based replication, meaning the cluster should have over 50% alive nodes 
+to be able to execute `INSERT/DELETE` operations. 
+
 This ensures that there will always be a majority of GraphDB nodes that always have up-to-date data.
 
 ## Recovering Individual Nodes
@@ -25,12 +26,13 @@ The following procedure describes how to recover one or multiple failed nodes:
    * First remove the failed nodes from the cluster.
    * Add the new nodes to the cluster, it’s important to add all new nodes in a single rest call. 
    This will avoid building and sending a snapshot multiple times.
-   Please note that this will trigger full replication, and it could be time-consuming depending on the size of the repository.   
+   Please note that this will trigger full replication, and it could be time-consuming, depending on the repositories size.   
 
 ## Rebuilding the Cluster from a Single Node
 Sometimes, multiple nodes can fail or in other situations:
-* nodes might be available,but cannot agree on the state of the cluster, 
-* cannot agree, which the leader is, and the cluster will be in a deadlocked state, unable to process write or even read requests.
+* nodes might be available,but cannot agree on the state of the cluster. 
+* cannot agree, which the leader is, and the cluster will be in a deadlocked state, 
+  unable to process write or even read requests.
 
 In such cases, the cluster can be rebuilt from a single node. 
 
@@ -42,7 +44,8 @@ Use the following procedure to rebuild the cluster from a single node:
    The steps to retrieve the log index for each node are as follows:
    * Get access to the nodes file system, where GraphDB stores its data.
    * Determine the size (in bytes) of `log.index` file. 
-   The location of this file is relative to the configured GraphDB data directory and has the following path `raft/transaction-log/log.index`.
+   The location of this file is relative to the configured GraphDB data directory 
+   and has the following path `raft/transaction-log/log.index`.
    * Use the following formula to calculate the log index (size_in_bytes / 33) - 1.
 4. On all nodes, except for the one determined in step 3, delete the entire data directory of GraphDB.
 5. On the node chosen in step 3, delete only the `raft/` subfolder of the data directory.
